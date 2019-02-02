@@ -1,0 +1,35 @@
+POST http://localhost:8081/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-02T111300.200.txt
+
+###
+
+POST http://localhost:8081/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-02T110247.200.txt
+
+###
+
+GET http://localhost:8081/actuator/httptrace
+Accept: application/vnd.spring-boot.actuator.v2+json
+
+<> 2019-02-02T092450.200.json
+
+###
+
+POST http://localhost:8081/booking?airplaneId=1&hotelId=11&carId=111
+
+###
+
+POST http://localhost:8081/booking?airplaneId=plane1&hotelId=hotel1&carId=car1
+
+<> 2019-02-02T092404.400.json
+
+###
+
+GET http://localhost:8081/booking
+
+<> 2019-02-02T092207.405.json
+
+###
+
