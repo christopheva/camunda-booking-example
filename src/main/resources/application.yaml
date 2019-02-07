@@ -5,3 +5,7 @@ camunda.bpm:
     firstName: Kermit
   filter:
     create: All tasks
+
+camunda:
+  bpm:
+    license-file: "file:${user.home}/.camunda/license.txt"

@@ -1,13 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_06129a0" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="2.2.4">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_06129a0" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="2.2.4">
   <bpmn:process id="booking" name="Booking" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1" />
+    <bpmn:startEvent id="BookingCommand" name="BookingCommand">
+      <bpmn:outgoing>SequenceFlow_0ivqwc6</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="BookAirplance" name="BookAirplance" camunda:expression="#{airplaneEventListener}">
+      <bpmn:incoming>SequenceFlow_097xvj2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0afq3qr</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="BookingCompleted" name="BookingCompleted">
+      <bpmn:incoming>SequenceFlow_0afq3qr</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0afq3qr" sourceRef="BookAirplance" targetRef="BookingCompleted" />
+    <bpmn:sequenceFlow id="SequenceFlow_0ivqwc6" sourceRef="BookingCommand" targetRef="IntermediateThrowEvent_0yrsotb" />
+    <bpmn:intermediateCatchEvent id="IntermediateThrowEvent_0yrsotb">
+      <bpmn:incoming>SequenceFlow_0ivqwc6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_097xvj2</bpmn:outgoing>
+      <bpmn:timerEventDefinition>
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT1M</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_097xvj2" sourceRef="IntermediateThrowEvent_0yrsotb" targetRef="BookAirplance" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="booking">
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="173" y="102" width="36" height="36" />
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="BookingCommand">
+        <dc:Bounds x="227" y="151" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="203" y="194" width="85" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_00c9ejt_di" bpmnElement="BookAirplance">
+        <dc:Bounds x="673" y="129" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0638rif_di" bpmnElement="BookingCompleted">
+        <dc:Bounds x="982" y="151" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="957" y="194" width="87" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0afq3qr_di" bpmnElement="SequenceFlow_0afq3qr">
+        <di:waypoint x="773" y="169" />
+        <di:waypoint x="982" y="169" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ivqwc6_di" bpmnElement="SequenceFlow_0ivqwc6">
+        <di:waypoint x="263" y="169" />
+        <di:waypoint x="542" y="169" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="IntermediateCatchEvent_0n3wibi_di" bpmnElement="IntermediateThrowEvent_0yrsotb">
+        <dc:Bounds x="542" y="151" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_097xvj2_di" bpmnElement="SequenceFlow_097xvj2">
+        <di:waypoint x="578" y="169" />
+        <di:waypoint x="673" y="169" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
