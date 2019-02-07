@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
-@RestController("/booking")
+@RestController
+@RequestMapping("/booking")
 public class BookingEventListener {
 
     @Autowired
