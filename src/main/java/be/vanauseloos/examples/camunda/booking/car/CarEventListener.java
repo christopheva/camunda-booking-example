@@ -1,21 +1,17 @@
 package be.vanauseloos.examples.camunda.booking.car;
 
-import be.vanauseloos.examples.camunda.booking.common.BookingEvents;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.event.EventListener;
+import be.vanauseloos.examples.camunda.ProcessConstants;
+import org.camunda.bpm.engine.delegate.DelegateExecution;
+import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CarEventListener {
+public class CarEventListener implements JavaDelegate {
 
-    @Autowired
-    private ApplicationContext applicationContext;
+    @Override
+    public void execute(DelegateExecution delegateExecution) throws Exception {
+        Object delegateExecutionVariable = delegateExecution.getVariable(ProcessConstants.VAR_NAME_carId);
 
-    @EventListener
-    public void handleBookingEvent(BookingEvents.HotelBookedEvent hotelBookedEvent){
-        System.out.println("HANDLE HOTEL BOOKED EVENT");
-
-        applicationContext.publishEvent(new BookingEvents.CarBookedEvent(hotelBookedEvent.getBookingInitialisedEvent()));
+        System.out.println("CarEventListener. Id: "+delegateExecutionVariable);
     }
 }

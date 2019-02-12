@@ -1,0 +1,52 @@
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-12T094531.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-12T094154.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-12T093936.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-12T093741.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-12T091846.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-12T091533.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-12T091309.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
+
+<> 2019-02-12T084828.200.txt
+
+###
+

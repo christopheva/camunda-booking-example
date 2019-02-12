@@ -12,16 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class AirplaneEventListener implements JavaDelegate {
 
-//    @Autowired
-//    private ApplicationContext applicationContext;
-//
-//    @EventListener
-//    public void handleBookingEvent(BookingEvents.BookingInitialisedEvent bookingInitialisedEvent){
-//        System.out.println("HANDLE BOOKING INITIALISED EVENT");
-//
-//        applicationContext.publishEvent(new BookingEvents.AirplaneBookedEvent(bookingInitialisedEvent));
-//    }
-
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         Object delegateExecutionVariable = delegateExecution.getVariable(ProcessConstants.VAR_NAME_airplaneId);

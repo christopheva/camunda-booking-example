@@ -7,5 +7,5 @@ public class ProcessConstants {
     public static final String VAR_NAME_uuid = "orderId";
     public static final String VAR_NAME_airplaneId = "airplaneId";
     public static final String VAR_NAME_hotelId = "hotelId";
-    public static final String VARIABLE_carId = "carId";
+    public static final String VAR_NAME_carId = "carId";
 }
