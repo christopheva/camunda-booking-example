@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0z4k1be" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.1">
+  <bpmn:collaboration id="Collaboration_1lchj96">
+    <bpmn:participant id="Participant_1g8z9yf" name="Happy holidays - book car" processRef="BookCar" />
+  </bpmn:collaboration>
+  <bpmn:process id="BookCar" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_0woo292">
+      <bpmn:outgoing>SequenceFlow_0gmlm12</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_10nr5fq" messageRef="Message_08r5gjc" />
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="ServiceTask_1uwwhcf" name="BookCar" camunda:delegateExpression="${serviceTaskLogger}">
+      <bpmn:incoming>SequenceFlow_0wmj6nw</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0de4b8d</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_1ba7fkx" name="Check availability" camunda:delegateExpression="${serviceTaskLogger}">
+      <bpmn:incoming>SequenceFlow_0gmlm12</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0at8udm</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_12hroky" name="Car booked event sender" camunda:asyncBefore="true" camunda:asyncAfter="true">
+      <bpmn:incoming>SequenceFlow_0de4b8d</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1esrttn" camunda:expression="${execution.getProcessEngineServices().getRuntimeService().createMessageCorrelation(&#34;CarBookedEventMessage&#34;).correlateWithResult()}" />
+    </bpmn:endEvent>
+    <bpmn:intermediateCatchEvent id="IntermediateCatchEvent_0km6taz">
+      <bpmn:incoming>SequenceFlow_0at8udm</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0wmj6nw</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1tkaufi">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT10S</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0gmlm12" sourceRef="StartEvent_0woo292" targetRef="ServiceTask_1ba7fkx" />
+    <bpmn:sequenceFlow id="SequenceFlow_0de4b8d" sourceRef="ServiceTask_1uwwhcf" targetRef="EndEvent_12hroky" />
+    <bpmn:sequenceFlow id="SequenceFlow_0at8udm" sourceRef="ServiceTask_1ba7fkx" targetRef="IntermediateCatchEvent_0km6taz" />
+    <bpmn:sequenceFlow id="SequenceFlow_0wmj6nw" sourceRef="IntermediateCatchEvent_0km6taz" targetRef="ServiceTask_1uwwhcf" />
+  </bpmn:process>
+  <bpmn:message id="Message_08r5gjc" name="BookCarCommandMessage" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1lchj96">
+      <bpmndi:BPMNShape id="Participant_1g8z9yf_di" bpmnElement="Participant_1g8z9yf" isHorizontal="true">
+        <dc:Bounds x="122" y="81" width="649" height="133" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0woo292_di" bpmnElement="StartEvent_0woo292">
+        <dc:Bounds x="203" y="137" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1uwwhcf_di" bpmnElement="ServiceTask_1uwwhcf">
+        <dc:Bounds x="471" y="115" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1ba7fkx_di" bpmnElement="ServiceTask_1ba7fkx">
+        <dc:Bounds x="273" y="115" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_12hroky_di" bpmnElement="EndEvent_12hroky">
+        <dc:Bounds x="646" y="137" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="620" y="100" width="87" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="IntermediateCatchEvent_0km6taz_di" bpmnElement="IntermediateCatchEvent_0km6taz">
+        <dc:Bounds x="410" y="137" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0gmlm12_di" bpmnElement="SequenceFlow_0gmlm12">
+        <di:waypoint x="239" y="155" />
+        <di:waypoint x="273" y="155" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0de4b8d_di" bpmnElement="SequenceFlow_0de4b8d">
+        <di:waypoint x="571" y="155" />
+        <di:waypoint x="646" y="155" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0at8udm_di" bpmnElement="SequenceFlow_0at8udm">
+        <di:waypoint x="373" y="155" />
+        <di:waypoint x="410" y="155" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0wmj6nw_di" bpmnElement="SequenceFlow_0wmj6nw">
+        <di:waypoint x="446" y="155" />
+        <di:waypoint x="471" y="155" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
