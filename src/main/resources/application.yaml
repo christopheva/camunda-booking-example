@@ -9,3 +9,10 @@ camunda.bpm:
 camunda:
   bpm:
     license-file: "file:${user.home}/.camunda/license.txt"
+
+
+#logging:
+#  level:
+#    org:
+#      camunda:
+#        bpm: TRACE

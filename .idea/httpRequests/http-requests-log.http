@@ -1,3 +1,297 @@
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T082506.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T082250.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T082059.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T075156.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T075044.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T073713.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T073329.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T073134.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T072957.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T072227.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T072142.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T072058.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-20T071437.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T045034.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T043950.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T043303.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T034253.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T034021.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T033858.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T031552.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T031123.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T030900.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T030308.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T030129.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T025946.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T025850.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T025315.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T024638.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T024548.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T024311.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T021953.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-19T021624.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-16T034611.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-16T034407.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-16T034319.200.txt
+
+###
+
+POST http://localhost:8080/booking
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-16T034243.400.json
+
+###
+
 POST http://localhost:8080/booking?airplaneId=1&hotelId=11&carId=111
 
 <> 2019-02-12T094531.200.txt

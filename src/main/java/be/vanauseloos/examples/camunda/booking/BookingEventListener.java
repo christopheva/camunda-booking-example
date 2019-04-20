@@ -22,11 +22,12 @@ public class BookingEventListener {
     public String handleBooking(@RequestParam Long airplaneId, @RequestParam Long carId, @RequestParam Long hotelId) {
         String uuid = UUID.randomUUID().toString();
 
-        processEngine.getRuntimeService().startProcessInstanceByKey(ProcessConstants.PROCESS_KEY_booking, //
-                Variables //
-                        .putValue(ProcessConstants.VAR_NAME_uuid, uuid) //
-                        .putValue(ProcessConstants.VAR_NAME_airplaneId, airplaneId) //
-                        .putValue(ProcessConstants.VAR_NAME_carId, carId) //
+        processEngine.getRuntimeService().startProcessInstanceByKey(ProcessConstants.PROCESS_KEY_booking,
+                UUID.randomUUID().toString(),
+                Variables
+                        .putValue(ProcessConstants.VAR_NAME_uuid, uuid)
+                        .putValue(ProcessConstants.VAR_NAME_airplaneId, airplaneId)
+                        .putValue(ProcessConstants.VAR_NAME_carId, carId)
                         .putValue(ProcessConstants.VAR_NAME_hotelId, hotelId));
 
         return uuid;
