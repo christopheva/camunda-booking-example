@@ -1,21 +1,21 @@
 package be.vanauseloos.examples.camunda.booking.hotel;
 
 import be.vanauseloos.examples.camunda.ProcessConstants;
-import be.vanauseloos.examples.camunda.booking.common.BookingEvents;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.event.EventListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
 public class HotelEventListener implements JavaDelegate {
+    private static final Logger LOGGER = LoggerFactory.getLogger(HotelEventListener.class);
+
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         Object delegateExecutionVariable = delegateExecution.getVariable(ProcessConstants.VAR_NAME_hotelId);
 
-        System.out.println("HotelEventListener. Id: "+delegateExecutionVariable);
+        LOGGER.debug("HotelEventListener. Id: " + delegateExecutionVariable);
     }
 }

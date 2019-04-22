@@ -4,6 +4,8 @@ import be.vanauseloos.examples.camunda.ProcessConstants;
 import org.apache.activemq.ScheduledMessage;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessagePostProcessor;
@@ -14,6 +16,7 @@ import javax.jms.Message;
 
 @Component
 public class BookHotelCommand implements JavaDelegate {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BookHotelCommand.class);
 
     @Autowired
     private JmsTemplate jmsTemplate;
@@ -32,8 +35,8 @@ public class BookHotelCommand implements JavaDelegate {
         });
 
 
-        System.out.println("=== MESSAGE SEND ===");
-        System.out.println("BookHotelCommand. Id: " + delegateExecutionVariable);
+        LOGGER.debug("=== MESSAGE SEND ===");
+        LOGGER.debug("BookHotelCommand. Id: " + delegateExecutionVariable);
 
     }
 }

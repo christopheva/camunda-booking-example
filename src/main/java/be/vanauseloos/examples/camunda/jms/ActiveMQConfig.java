@@ -1,6 +1,5 @@
 package be.vanauseloos.examples.camunda.jms;
 
-import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,7 +29,7 @@ public class ActiveMQConfig {
     }
 
     @Bean
-    public BrokerService brokerService(){
+    public BrokerService brokerService() {
         BrokerService brokerService = new BrokerService();
         brokerService.setSchedulerSupport(true);
         brokerService.setPersistent(false);

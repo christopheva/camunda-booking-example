@@ -10,6 +10,10 @@ camunda:
   bpm:
     license-file: "file:${user.home}/.camunda/license.txt"
 
+logging:
+  level:
+    be:
+      vanauseloos: debug
 
 #logging:
 #  level:
