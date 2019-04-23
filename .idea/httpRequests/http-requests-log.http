@@ -2,6 +2,22 @@ POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
 Accept: */*
 Cache-Control: no-cache
 
+<> 2019-04-23T084238.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-04-23T083517.200.txt
+
+###
+
+POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
+Accept: */*
+Cache-Control: no-cache
+
 <> 2019-04-23T082006.200.txt
 
 ###
@@ -373,22 +389,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2019-04-20T075044.200.txt
-
-###
-
-POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-04-20T073713.200.txt
-
-###
-
-POST http://localhost:8080/booking?airplaneId=1&carId=2&hotelId=3
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-04-20T073329.200.txt
 
 ###
 
