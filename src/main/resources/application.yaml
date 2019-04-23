@@ -6,17 +6,7 @@ camunda.bpm:
   filter:
     create: All tasks
 
-camunda:
-  bpm:
-    license-file: "file:${user.home}/.camunda/license.txt"
-
 logging:
   level:
     be:
       vanauseloos: debug
-
-#logging:
-#  level:
-#    org:
-#      camunda:
-#        bpm: TRACE

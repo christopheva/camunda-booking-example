@@ -25,13 +25,12 @@ public class HotelBookedEventListener {
     public void receiveMessage(@Payload Object payload,
                                @Headers MessageHeaders headers,
                                Message message, Session session) throws InterruptedException {
-
         LOGGER.debug("=== MESSAGE RECEIVED ===");
-        LOGGER.debug(message.toString());
+
         String businessKey = headers.get("BUSINESS-KEY", String.class);
         runtimeService.createMessageCorrelation("HotelBookEventMessage")
                 .processInstanceBusinessKey(businessKey)
-                .correlateWithResult();
+                .correlate();
     }
 
 }

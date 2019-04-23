@@ -28,6 +28,8 @@
         <bpmn:flowNodeRef>BoundaryEvent_1pnw2ch</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>BoundaryEvent_1qpxccx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>BoundaryEvent_0qg4mpa</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>BoundaryEvent_1tculxg</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>BoundaryEvent_0rq703o</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:serviceTask id="BookAirplane" name="BookAirplane" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:delegateExpression="#{airplaneEventListener}">
@@ -82,11 +84,13 @@
       <bpmn:incoming>SequenceFlow_1pht6wa</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_1ke21m7</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_1jy38bh</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_11si6ly</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_198c0sf</bpmn:outgoing>
     </bpmn:task>
     <bpmn:task id="Task_1n5cpp5" name="Cancel&#10;BookedHotel">
       <bpmn:incoming>SequenceFlow_1wilzyq</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_14unfrh</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0rjjn5i</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1jy38bh</bpmn:outgoing>
     </bpmn:task>
     <bpmn:task id="Task_1949txk" name="Cancel&#10;BookedCar">
@@ -128,6 +132,16 @@
     <bpmn:sequenceFlow id="SequenceFlow_1atah8s" sourceRef="BoundaryEvent_1qpxccx" targetRef="Task_1949txk" />
     <bpmn:sequenceFlow id="SequenceFlow_1wilzyq" sourceRef="Task_1949txk" targetRef="Task_1n5cpp5" />
     <bpmn:sequenceFlow id="SequenceFlow_14unfrh" sourceRef="BoundaryEvent_0qg4mpa" targetRef="Task_1n5cpp5" />
+    <bpmn:boundaryEvent id="BoundaryEvent_1tculxg" attachedToRef="Task_0sa4fu8">
+      <bpmn:outgoing>SequenceFlow_11si6ly</bpmn:outgoing>
+      <bpmn:errorEventDefinition />
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_11si6ly" sourceRef="BoundaryEvent_1tculxg" targetRef="Task_1a0m7vh" />
+    <bpmn:boundaryEvent id="BoundaryEvent_0rq703o" attachedToRef="Task_1siszrv">
+      <bpmn:outgoing>SequenceFlow_0rjjn5i</bpmn:outgoing>
+      <bpmn:errorEventDefinition />
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0rjjn5i" sourceRef="BoundaryEvent_0rq703o" targetRef="Task_1n5cpp5" />
     <bpmn:textAnnotation id="TextAnnotation_0deabad">
       <bpmn:text>Camunda message - External process
 10s process duration</bpmn:text>
@@ -144,7 +158,7 @@
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0kjqdo4">
       <bpmndi:BPMNShape id="Participant_1gxkqp7_di" bpmnElement="Participant_1gxkqp7" isHorizontal="true">
-        <dc:Bounds x="156" y="81" width="2041" height="544" />
+        <dc:Bounds x="185" y="81" width="1936" height="370" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0rbrsw5_di" bpmnElement="TextAnnotation_0rbrsw5">
         <dc:Bounds x="939" y="110" width="114" height="36" />
@@ -239,7 +253,7 @@
         <di:waypoint x="1499" y="154" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Lane_0im2d86_di" bpmnElement="Lane_0im2d86" isHorizontal="true">
-        <dc:Bounds x="186" y="81" width="2011" height="544" />
+        <dc:Bounds x="215" y="81" width="1906" height="370" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0ivqwc6_di" bpmnElement="SequenceFlow_0ivqwc6">
         <di:waypoint x="319" y="237" />
@@ -314,6 +328,22 @@
       <bpmndi:BPMNEdge id="SequenceFlow_14unfrh_di" bpmnElement="SequenceFlow_14unfrh">
         <di:waypoint x="1517" y="295" />
         <di:waypoint x="1517" y="381" />
+        <di:waypoint x="1178" y="381" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BoundaryEvent_1dx2xwr_di" bpmnElement="BoundaryEvent_1tculxg">
+        <dc:Bounds x="849" y="259" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_11si6ly_di" bpmnElement="SequenceFlow_11si6ly">
+        <di:waypoint x="867" y="295" />
+        <di:waypoint x="867" y="381" />
+        <di:waypoint x="664" y="381" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BoundaryEvent_0oa6d53_di" bpmnElement="BoundaryEvent_0rq703o">
+        <dc:Bounds x="1313" y="259" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0rjjn5i_di" bpmnElement="SequenceFlow_0rjjn5i">
+        <di:waypoint x="1331" y="295" />
+        <di:waypoint x="1331" y="381" />
         <di:waypoint x="1178" y="381" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
